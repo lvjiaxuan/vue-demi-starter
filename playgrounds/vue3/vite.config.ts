@@ -7,5 +7,5 @@ export default defineConfig({
   base: './',
   plugins: [ vue() ],
   resolve: { alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) } },
-  optimizeDeps: { exclude: [ 'vue-demi', 'vue-seamless-roll' ], force: true },
+  optimizeDeps: { exclude: [ 'vue-demi', 'lib-name' ], force: true },
 })

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import libName from 'lib-name'
+import LibName from 'lib-name'
 import { version } from 'vue'
-// import Seamless from './../../../src'
+// import LibName from './../../../src'
 // import './../../../dist/index.css'
 </script>
 

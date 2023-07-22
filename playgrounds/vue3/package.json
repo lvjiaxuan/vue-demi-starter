@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "vue": "^3.3.4",
-    "vue-seamless-roll": "file:./../../dist"
+    "lib-name": "file:./../../dist"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
