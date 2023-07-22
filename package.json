@@ -1,5 +1,5 @@
 {
-  "name": "pkg-name",
+  "name": "lib-name",
   "type": "module",
   "version": "0.0.0",
   "private": false,
@@ -8,9 +8,16 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lvjiaxuan/pkg-name"
+    "url": "https://github.com/lvjiaxuan/lib-name"
   },
-  "keywords": [],
+  "keywords": [
+    "vue",
+    "vue2",
+    "vue3",
+    "vue2/3",
+    "lib-name",
+    "vue-demi"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -25,18 +32,45 @@
     "dist"
   ],
   "scripts": {
-    "dev": "echo dev",
-    "build": "echo build",
+    "dev3": "run-p dev:*",
+    "dev:3": "nr -C=playgrounds/vue3 dev",
+    "dev:u": "nr u --watch",
+    "preview:3": "nr build:preview && ni -C=playgrounds/vue3 --force && nr -C=playgrounds/vue3 build && nr -C=playgrounds/vue3 preview",
+    "preview:2": "nr build:preview && ni -C=playgrounds/vue2 --force && nr -C=playgrounds/vue2 build && nr -C=playgrounds/vue2 preview",
+    "u": "unocss src/index.ts -o=dist/index.css",
+    "r": "lvr --pkg --main-pkg --no-push",
+    "build:deploy": "node ./scripts/buildDeploy.mjs",
+    "build:preview": "nr build && nr inject:pkg",
+    "build": "unbuild && nr u && nr inject:css",
+    "inject:css": "node ./scripts/injectCSS.mjs",
+    "inject:pkg": "node ./scripts/injectPkg.mjs",
     "lint": "eslint .",
     "prepublishOnly": "nr build",
-    "r": "lvr --no-push"
+    "prepare": "ni && nr build && nr i"
+  },
+  "peerDependencies": {
+    "@vue/composition-api": "^1.7.1",
+    "vue": "^2.0.0 || >=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@vue/composition-api": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "vue-demi": "^0.14.5"
   },
   "devDependencies": {
     "@lvjiaxuan/eslint-plugin": "^0.15.0",
     "@tsconfig/node18": "^18.2.0",
-    "@types/node": "^20.4.2",
+    "@types/node": "^20.4.3",
+    "@unocss/cli": "^0.53.6",
     "@vue/tsconfig": "^0.4.0",
     "eslint": "^8.45.0",
-    "typescript": "^5.1.6"
+    "execa": "^7.1.1",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.1.6",
+    "unbuild": "^1.2.1",
+    "vue": "^3.3.4"
   }
 }
