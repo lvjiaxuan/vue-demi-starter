@@ -11,7 +11,7 @@
 ## Install
 
 ```sh
-npm i lib-name
+pnpm i lib-name
 ```
 
 ## Props
@@ -28,21 +28,21 @@ props: {
 1. Install
 ```sh
 pnpm i
+pnpm pg:i
 ```
 
-2. Edit `playgrounds/vue3/src/App.vue`
+2. Confirm `playgrounds/vue3/src/App.vue`
 ```xml
 <script setup lang="ts">
+// For build
 // import libName from 'lib-name'
-import libName from './../../../src'
-import './../../../dist/index.css'
-
+import LibName from './../../../src'
 // ...
 ```
 
 3. Run the dev script
 ```sh
-pnpm dev3
+pnpm dev
 ```
 
 ### Preview vue 2/3

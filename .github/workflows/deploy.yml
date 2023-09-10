@@ -45,13 +45,13 @@ jobs:
       - name: Run scripts
         run: |
           pnpm i @antfu/ni -g
-          ni
+          nci
           nr build:preview
-          nr i
+          nr pg:i
           nr build:deploy
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v2
         with:
           # Upload dist repository
           path: ./dist
