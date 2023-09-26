@@ -1,5 +1,5 @@
-import fs from 'node:fs'
 import { URL, fileURLToPath } from 'node:url'
+import fs from 'node:fs'
 
 
 const root = fileURLToPath(new URL('./../', import.meta.url))

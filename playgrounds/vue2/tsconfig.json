@@ -1,9 +1,9 @@
 {
   "extends": "./../../tsconfig.json",
-  "exclude": ["./../vue3/**"],
   "compilerOptions": {
     "moduleResolution": "Node"
   },
+  "exclude": ["./../vue3/**"],
   "vueCompilerOptions": {
     "target": 2.7
   }

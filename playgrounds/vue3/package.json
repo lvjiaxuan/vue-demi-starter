@@ -9,14 +9,14 @@
     "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "vue": "^3.3.4",
-    "lib-name": "file:./../../dist"
+    "lib-name": "file:./../../dist",
+    "vue": "^3.3.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.3.4",
-    "unocss": "^0.55.4",
+    "unocss": "^0.56.2",
     "vite": "^4.4.9",
     "vue-demi": "^0.14.6",
-    "vue-tsc": "^1.8.8"
+    "vue-tsc": "^1.8.14"
   }
 }
